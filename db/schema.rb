@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010133702) do
+ActiveRecord::Schema.define(version: 20150610144104) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -25,6 +25,46 @@ ActiveRecord::Schema.define(version: 20141010133702) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "incidents", force: :cascade do |t|
+    t.text     "summary"
+    t.integer  "year"
+    t.string   "month"
+    t.string   "city"
+    t.string   "state"
+    t.string   "context"
+    t.boolean  "abuse_force"
+    t.boolean  "abuse_search"
+    t.boolean  "abuse_misconduct"
+    t.boolean  "abuse_intimidation"
+    t.boolean  "abuse_sexual"
+    t.boolean  "abuse_escalation"
+    t.boolean  "abuse_animal"
+    t.string   "force_variety"
+    t.string   "search_variety"
+    t.string   "misconduct_variety"
+    t.string   "intimidation_variety"
+    t.string   "sexual_variety"
+    t.string   "escalation_variety"
+    t.integer  "victim_count"
+    t.text     "victim_notes"
+    t.string   "victim_race"
+    t.string   "victim_age"
+    t.string   "victim_gender"
+    t.integer  "officer_count"
+    t.string   "officer_race"
+    t.string   "officer_tenure"
+    t.string   "officer_gender"
+    t.string   "outcome_physical_variety"
+    t.string   "outcome_legal_variety"
+    t.string   "outcome_hr_variety"
+    t.string   "outcome_internal_variety"
+    t.string   "outcome_dept_statement_variety"
+    t.string   "outcome_union_statement_variety"
+    t.integer  "outcome_dollars"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
