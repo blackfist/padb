@@ -1,3 +1,24 @@
 <%= simple_form_for @incident do |f| %>
-  <%= f.input :summary %>
+  <%= f.input :summary, label: "Incident summary" %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :year %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :month %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.input :city %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :state %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :context %>
+    </div>
+  </div>
+  <%= f.submit "Submit incident" %>
 <% end %>
