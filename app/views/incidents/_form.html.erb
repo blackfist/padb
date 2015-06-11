@@ -14,10 +14,10 @@
       <%= f.input :city %>
     </div>
     <div class="col-md-4">
-      <%= f.input :state %>
+      <%= f.input :state, collection: us_states, prompt:"Select" %>
     </div>
     <div class="col-md-4">
-      <%= f.input :context %>
+      <%= f.input :context, collection: context_values, prompt: "Select contex", label:"What lead to the encounter?" %>
     </div>
   </div>
   <%= f.submit "Submit incident" %>

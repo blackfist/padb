@@ -43,5 +43,6 @@
 #
 
 class Incident < ActiveRecord::Base
+
   validates :summary, :year, :state, :context, presence: true
 end
