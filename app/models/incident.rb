@@ -45,4 +45,23 @@
 class Incident < ActiveRecord::Base
 
   validates :summary, :year, :state, :context, presence: true
+
+  serialize :force_variety
+  serialize :search_variety
+  serialize :misconduct_variety
+  serialize :intimidation_variety
+  serialize :sexual_variety
+  serialize :escalation_variety
+  serialize :victim_race
+  serialize :victim_age
+  serialize :victim_gender
+  serialize :officer_race
+  serialize :officer_tenure
+  serialize :officer_gender
+  serialize :outcome_physical_variety
+  serialize :outcome_legal_variety
+  serialize :outcome_hr_variety
+  serialize :outcome_internal_variety
+  serialize :outcome_dept_statement_variety
+  serialize :outcome_union_statement_variety
 end
