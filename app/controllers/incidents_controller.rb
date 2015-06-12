@@ -14,7 +14,7 @@ class IncidentsController < ApplicationController
 
   # GET /incidents/new
   def new
-    @incident = Incident.new
+    @incident_form = IncidentForm.new
   end
 
   # GET /incidents/1/edit
@@ -24,15 +24,13 @@ class IncidentsController < ApplicationController
   # POST /incidents
   # POST /incidents.json
   def create
-    @incident = Incident.new(incident_params)
+    @incident_form = IncidentForm.new incident_form_params
 
     respond_to do |format|
-      if @incident.save
-        format.html { redirect_to @incident, notice: 'Incident was successfully created.' }
-        format.json { render :show, status: :created, location: @incident }
+      if @incident_form.save
+        format.html { redirect_to incidents_path, notice: 'Incident was successfully created.' }
       else
-        format.html { render :new }
-        format.json { render json: @incident.errors, status: :unprocessable_entity }
+        render :new
       end
     end
   end
@@ -68,8 +66,8 @@ class IncidentsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def incident_params
-      params.require(:incident).permit(:summary, :year, :month, :city, :state,
+    def incident_form_params
+      params.require(:incident_form).permit(:summary, :year, :month, :city, :state,
       :context, :abuse_force, :abuse_search, :abuse_misconduct,
       :abuse_intimidation, :abuse_sexual, :abuse_escalation, :abuse_animal,
       {force_variety: []}, {search_variety: []}, {misconduct_variety: []},
@@ -79,6 +77,7 @@ class IncidentsController < ApplicationController
       {outcome_physical_variety: []}, {outcome_legal_variety: []},
       {outcome_hr_variety: []},
       {outcome_internal_variety: []}, {outcome_dept_statement_variety: []},
-      {outcome_union_statement_variety: []}, :outcome_dollars)
+      {outcome_union_statement_variety: []}, :outcome_dollars, :department_name,
+      :department_city, :department_state, :department_county, :department_level)
     end
 end

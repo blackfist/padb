@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610144104) do
+ActiveRecord::Schema.define(version: 20150612054941) do
+
+  create_table "departments", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "county"
+    t.string   "level"
+    t.text     "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -64,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150610144104) do
     t.integer  "outcome_dollars"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.integer  "department_id"
   end
 
   create_table "posts", force: :cascade do |t|

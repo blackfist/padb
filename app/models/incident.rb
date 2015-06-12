@@ -45,6 +45,8 @@
 class Incident < ActiveRecord::Base
 
   validates :summary, :year, :state, :context, presence: true
+  belongs_to :department
+  accepts_nested_attributes_for :department
 
   serialize :force_variety
   serialize :search_variety

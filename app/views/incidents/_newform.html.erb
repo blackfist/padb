@@ -1,4 +1,4 @@
-<%= simple_form_for @incident do |f| %>
+<%= simple_form_for @incident_form, url: incidents_path do |f| %>
   <h2>Basic inforation</h2>
   <%= f.input :summary, label: "Incident summary" %>
   <div class="row">
@@ -64,6 +64,21 @@
     </div>
     <div class="col-md-4">
       <%= f.input :officer_gender, collection: gender_variety, input_html: {multiple: true} %>
+    </div>
+  </div>
+  <%= f.input :department_name %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.input :department_city %>
+    </div>
+    <div class="col-md-3">
+      <%= f.input :department_state %>
+    </div>
+    <div class="col-md-3">
+      <%= f.input :department_county %>
+    </div>
+    <div class="col-md-3">
+      <%= f.input :department_level %>
     </div>
   </div>
 
