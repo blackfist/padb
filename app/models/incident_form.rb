@@ -29,6 +29,7 @@ class IncidentForm
       city: department_city, state: department_state).first_or_create
     dept.level = department_level
     dept.notes = department_notes
+    dept.county = department_county
     puts dept.level
     dept.save
 
