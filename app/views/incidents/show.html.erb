@@ -1,179 +1,25 @@
 <p id="notice"><%= notice %></p>
+<%= show_for @incident do |i| %>
+  <h2>Basic inforation</h2>
+  <%= i.attribute :summary %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= i.attribute :year %>
+    </div>
+    <div class="col-md-6">
+      <%= i.attribute :month %>
+    </div>
+  </div>
 
-<p>
-  <strong>Summary:</strong>
-  <%= @incident.summary %>
-</p>
-
-<p>
-  <strong>Year:</strong>
-  <%= @incident.year %>
-</p>
-
-<p>
-  <strong>Month:</strong>
-  <%= @incident.month %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @incident.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @incident.state %>
-</p>
-
-<p>
-  <strong>Context:</strong>
-  <%= @incident.context %>
-</p>
-
-<p>
-  <strong>Abuse force:</strong>
-  <%= @incident.abuse_force %>
-</p>
-
-<p>
-  <strong>Abuse search:</strong>
-  <%= @incident.abuse_search %>
-</p>
-
-<p>
-  <strong>Abuse misconduct:</strong>
-  <%= @incident.abuse_misconduct %>
-</p>
-
-<p>
-  <strong>Abuse intimidation:</strong>
-  <%= @incident.abuse_intimidation %>
-</p>
-
-<p>
-  <strong>Abuse sexual:</strong>
-  <%= @incident.abuse_sexual %>
-</p>
-
-<p>
-  <strong>Abuse escalation:</strong>
-  <%= @incident.abuse_escalation %>
-</p>
-
-<p>
-  <strong>Abuse animal:</strong>
-  <%= @incident.abuse_animal %>
-</p>
-
-<p>
-  <strong>Force variety:</strong>
-  <%= @incident.force_variety %>
-</p>
-
-<p>
-  <strong>Search variety:</strong>
-  <%= @incident.search_variety %>
-</p>
-
-<p>
-  <strong>Misconduct variety:</strong>
-  <%= @incident.misconduct_variety %>
-</p>
-
-<p>
-  <strong>Intimidation variety:</strong>
-  <%= @incident.intimidation_variety %>
-</p>
-
-<p>
-  <strong>Sexual variety:</strong>
-  <%= @incident.sexual_variety %>
-</p>
-
-<p>
-  <strong>Escalation variety:</strong>
-  <%= @incident.escalation_variety %>
-</p>
-
-<p>
-  <strong>Victim count:</strong>
-  <%= @incident.victim_count %>
-</p>
-
-<p>
-  <strong>Victim notes:</strong>
-  <%= @incident.victim_notes %>
-</p>
-
-<p>
-  <strong>Victim race:</strong>
-  <%= @incident.victim_race %>
-</p>
-
-<p>
-  <strong>Victim age:</strong>
-  <%= @incident.victim_age %>
-</p>
-
-<p>
-  <strong>Victim gender:</strong>
-  <%= @incident.victim_gender %>
-</p>
-
-<p>
-  <strong>Officer count:</strong>
-  <%= @incident.officer_count %>
-</p>
-
-<p>
-  <strong>Officer race:</strong>
-  <%= @incident.officer_race %>
-</p>
-
-<p>
-  <strong>Officer tenure:</strong>
-  <%= @incident.officer_tenure %>
-</p>
-
-<p>
-  <strong>Officer gender:</strong>
-  <%= @incident.officer_gender %>
-</p>
-
-<p>
-  <strong>Outcome physical variety:</strong>
-  <%= @incident.outcome_physical_variety %>
-</p>
-
-<p>
-  <strong>Outcome legal variety:</strong>
-  <%= @incident.outcome_legal_variety %>
-</p>
-
-<p>
-  <strong>Outcome hr variety:</strong>
-  <%= @incident.outcome_hr_variety %>
-</p>
-
-<p>
-  <strong>Outcome internal variety:</strong>
-  <%= @incident.outcome_internal_variety %>
-</p>
-
-<p>
-  <strong>Outcome dept statement variety:</strong>
-  <%= @incident.outcome_dept_statement_variety %>
-</p>
-
-<p>
-  <strong>Outcome union statement variety:</strong>
-  <%= @incident.outcome_union_statement_variety %>
-</p>
-
-<p>
-  <strong>Outcome dollars:</strong>
-  <%= @incident.outcome_dollars %>
-</p>
-
-<%= link_to 'Edit', edit_incident_path(@incident) %> |
-<%= link_to 'Back', incidents_path %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= i.attribute :city %>
+    </div>
+    <div class="col-md-4">
+      <%= i.attribute :state %>
+    </div>
+    <div class="col-md-4">
+      <%= i.attribute :context %>
+    </div>
+  </div>
+<% end %>

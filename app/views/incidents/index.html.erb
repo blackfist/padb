@@ -1,90 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Incidents</h1>
+<p><strong><%= @incidents.count %></strong> <%= "incident".pluralize(@incidents.count) %> and counting.</p>
 
-<table>
+
+<%= link_to 'New Incident', new_incident_path %>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Summary</th>
-      <th>Year</th>
-      <th>Month</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Context</th>
-      <th>Abuse force</th>
-      <th>Abuse search</th>
-      <th>Abuse misconduct</th>
-      <th>Abuse intimidation</th>
-      <th>Abuse sexual</th>
-      <th>Abuse escalation</th>
-      <th>Abuse animal</th>
-      <th>Force variety</th>
-      <th>Search variety</th>
-      <th>Misconduct variety</th>
-      <th>Intimidation variety</th>
-      <th>Sexual variety</th>
-      <th>Escalation variety</th>
-      <th>Victim count</th>
-      <th>Victim notes</th>
-      <th>Victim race</th>
-      <th>Victim age</th>
-      <th>Victim gender</th>
-      <th>Officer count</th>
-      <th>Officer race</th>
-      <th>Officer tenure</th>
-      <th>Officer gender</th>
-      <th>Outcome physical variety</th>
-      <th>Outcome legal variety</th>
-      <th>Outcome hr variety</th>
-      <th>Outcome internal variety</th>
-      <th>Outcome dept statement variety</th>
-      <th>Outcome union statement variety</th>
-      <th>Outcome dollars</th>
-      <th colspan="3"></th>
+      <th>Department</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
   <tbody>
     <% @incidents.each do |incident| %>
       <tr>
-        <td><%= incident.summary %></td>
-        <td><%= incident.year %></td>
-        <td><%= incident.month %></td>
-        <td><%= incident.city %></td>
-        <td><%= incident.state %></td>
-        <td><%= incident.context %></td>
-        <td><%= incident.abuse_force %></td>
-        <td><%= incident.abuse_search %></td>
-        <td><%= incident.abuse_misconduct %></td>
-        <td><%= incident.abuse_intimidation %></td>
-        <td><%= incident.abuse_sexual %></td>
-        <td><%= incident.abuse_escalation %></td>
-        <td><%= incident.abuse_animal %></td>
-        <td><%= incident.force_variety %></td>
-        <td><%= incident.search_variety %></td>
-        <td><%= incident.misconduct_variety %></td>
-        <td><%= incident.intimidation_variety %></td>
-        <td><%= incident.sexual_variety %></td>
-        <td><%= incident.escalation_variety %></td>
-        <td><%= incident.victim_count %></td>
-        <td><%= incident.victim_notes %></td>
-        <td><%= incident.victim_race %></td>
-        <td><%= incident.victim_age %></td>
-        <td><%= incident.victim_gender %></td>
-        <td><%= incident.officer_count %></td>
-        <td><%= incident.officer_race %></td>
-        <td><%= incident.officer_tenure %></td>
-        <td><%= incident.officer_gender %></td>
-        <td><%= incident.outcome_physical_variety %></td>
-        <td><%= incident.outcome_legal_variety %></td>
-        <td><%= incident.outcome_hr_variety %></td>
-        <td><%= incident.outcome_internal_variety %></td>
-        <td><%= incident.outcome_dept_statement_variety %></td>
-        <td><%= incident.outcome_union_statement_variety %></td>
-        <td><%= incident.outcome_dollars %></td>
-        <td><%= link_to 'Show', incident %></td>
-        <td><%= link_to 'Edit', edit_incident_path(incident) %></td>
-        <td><%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to incident.summary, incident %></td>
+        <td><%= incident.department.name %></td>
+        <td><%= link_to 'Edit', edit_incident_path(incident) %>
+            <%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

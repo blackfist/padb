@@ -25,30 +25,31 @@
   <h2>Abuse information</h2>
   <div class="row">
     <div class="col-md-4">
-      <%= f.input :force_variety, collection: force_variety, input_html: {multiple: true} %>
-      <%= f.input :intimidation_variety, collection: intimidation_variety, input_html: {multiple: true} %>
+      <%= f.input :force_variety, collection: force_variety, input_html: {multiple: true, size:6 } %>
+      <%= f.input :intimidation_variety, collection: intimidation_variety, input_html: {multiple: true, size:6 } %>
     </div>
     <div class="col-md-4">
-      <%= f.input :search_variety, collection: search_variety, input_html: {multiple: true} %>
-      <%= f.input :sexual_variety, collection: sexual_variety, input_html: {multiple: true} %>
+      <%= f.input :search_variety, collection: search_variety, input_html: {multiple: true, size:6 } %>
+      <%= f.input :sexual_variety, collection: sexual_variety, input_html: {multiple: true, size:6 } %>
     </div>
     <div class="col-md-4">
-      <%= f.input :misconduct_variety, collection: misconduct_variety, input_html: {multiple: true} %>
-      <%= f.input :escalation_variety, collection: escalation_variety, input_html: {multiple: true} %>
+      <%= f.input :misconduct_variety, collection: misconduct_variety, input_html: {multiple: true, size:6 } %>
+      <%= f.input :escalation_variety, collection: escalation_variety, input_html: {multiple: true, size:6 } %>
     </div>
   </div>
-  <%= f.input :abuse_animal, label:"Unreasonable attack on an animal" %>
+  <%= f.input :abuse_animal, label:"Unreasonable attack on an animal", as: :boolean %>
 
   <h2>Victim information</h2>
+  <%= f.input :victim_count %>
   <div class="row">
     <div class="col-md-4">
-      <%= f.input :victim_race, collection: race_variety, input_html: {multiple: true} %>
+      <%= f.input :victim_race, collection: race_variety, input_html: {multiple: true, size:6 } %>
     </div>
     <div class="col-md-4">
-      <%= f.input :victim_age, collection: victim_age, input_html: {multiple: true} %>
+      <%= f.input :victim_age, collection: victim_age, input_html: {multiple: true, size:6 } %>
     </div>
     <div class="col-md-4">
-      <%= f.input :victim_gender, collection: gender_variety, input_html: {multiple: true} %>
+      <%= f.input :victim_gender, collection: gender_variety, input_html: {multiple: true, size:6 } %>
     </div>
   </div>
   <%= f.input :victim_notes %>
@@ -57,28 +58,34 @@
   <%= f.input :officer_count %>
   <div class="row">
     <div class="col-md-4">
-      <%= f.input :officer_race, collection: race_variety, input_html: {multiple: true} %>
+      <%= f.input :officer_race, collection: race_variety, input_html: {multiple: true, size:6 } %>
     </div>
     <div class="col-md-4">
-      <%= f.input :officer_tenure, collection: officer_tenure, input_html: {multiple: true} %>
+      <%= f.input :officer_tenure, collection: officer_tenure, input_html: {multiple: true, size:6 } %>
     </div>
     <div class="col-md-4">
-      <%= f.input :officer_gender, collection: gender_variety, input_html: {multiple: true} %>
+      <%= f.input :officer_gender, collection: gender_variety, input_html: {multiple: true, size:6 } %>
     </div>
   </div>
-  <%= f.input :department_name %>
+
+    <%= f.input :department_name, url: autocomplete_department_name_incidents_path, :as => :autocomplete,
+        update_elements: {city: '#incident_form_department_city',
+                          state: '#incident_form_department_state',
+                          county: '#incident_form_department_county',
+                          level: '#incident_form_department_level'},
+        input_html: {class:"form-control"} %>
   <div class="row">
     <div class="col-md-3">
       <%= f.input :department_city %>
     </div>
     <div class="col-md-3">
-      <%= f.input :department_state %>
+      <%= f.input :department_state, collection: us_states, prompt:"Select" %>
     </div>
     <div class="col-md-3">
       <%= f.input :department_county %>
     </div>
     <div class="col-md-3">
-      <%= f.input :department_level %>
+      <%= f.input :department_level, collection: department_levels, prompt:"Select" %>
     </div>
   </div>
 
@@ -86,16 +93,16 @@
   <h2>Outcomes</h2>
   <div class="row">
     <div class="col-md-4">
-      <%= f.input :outcome_physical_variety, collection: physical_outcomes, input_html: {multiple: true} %>
-      <%= f.input :outcome_internal_variety, collection: internal_outcomes, input_html: {multiple: true} %>
+      <%= f.input :outcome_physical_variety, collection: physical_outcomes, input_html: {multiple: true, size:6 } %>
+      <%= f.input :outcome_internal_variety, collection: internal_outcomes, input_html: {multiple: true, size:6 } %>
     </div>
     <div class="col-md-4">
-      <%= f.input :outcome_legal_variety, collection: legal_outcomes, input_html: {multiple: true} %>
-      <%= f.input :outcome_dept_statement_variety, collection: statements, input_html: {multiple: true} %>
+      <%= f.input :outcome_legal_variety, collection: legal_outcomes, input_html: {multiple: true, size:6 } %>
+      <%= f.input :outcome_dept_statement_variety, collection: statements, input_html: {multiple: true, size:6 } %>
     </div>
     <div class="col-md-4">
-      <%= f.input :outcome_hr_variety, collection: hr_outcomes, input_html: {multiple: true} %>
-      <%= f.input :outcome_union_statement_variety, collection: statements, input_html: {multiple: true} %>
+      <%= f.input :outcome_hr_variety, collection: hr_outcomes, input_html: {multiple: true, size:6 } %>
+      <%= f.input :outcome_union_statement_variety, collection: statements, input_html: {multiple: true, size:6 } %>
     </div>
   </div>
   <%= f.input :outcome_dollars, label:"Total dollar amount for awards/settlements" %>

@@ -1,5 +1,6 @@
 class IncidentsController < ApplicationController
   before_action :set_incident, only: [:show, :edit, :update, :destroy]
+  autocomplete :department, :name, full: true, extra_data: [:city, :state, :county, :level]
 
   # GET /incidents
   # GET /incidents.json
