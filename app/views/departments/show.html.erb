@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @dept.name %></h1>
+
+<%= show_for @dept do |d| %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= d.attribute :city %>
+    </div>
+    <div class="col-md-3">
+      <%= d.attribute :state %>
+    </div>
+    <div class="col-md-3">
+      <%= d.attribute :county %>
+    </div>
+    <div class="col-md-3">
+      <%= d.attribute :level %>
+    </div>
+  </div>
+  <%= d.attribute :notes %>
+<% end %>
+
+<h2>Related Incidents</h2>
+<table class="table table-striped">
+  <thead>
+    <th>Summary</th>
+    <th>Date</th>
+  </thead>
+  <tbody>
+    <% @dept.incidents.each do |i| %>
+      <tr>
+        <td><%= link_to i.summary, incident_path(i) %></td>
+        <td><%= "#{i.month} / #{i.year}" %></td>
+    <% end %>
+  </tbody>
+</table>

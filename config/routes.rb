@@ -1,4 +1,6 @@
 Padb::Application.routes.draw do
+  resources :departments
+
   resources :incidents do
     get :autocomplete_department_name, :on => :collection
   end

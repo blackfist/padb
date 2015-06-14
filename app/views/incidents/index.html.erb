@@ -18,7 +18,7 @@
     <% @incidents.each do |incident| %>
       <tr>
         <td><%= link_to incident.summary, incident %></td>
-        <td><%= incident.department.name %></td>
+        <td><%= link_to incident.department.name, department_path(incident.department) %></td>
         <td><%= link_to 'Edit', edit_incident_path(incident) %>
             <%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
