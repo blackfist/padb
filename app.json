@@ -2,5 +2,8 @@
   "name": "Police abuse database",
   "description": "A rails app to keep track of incidents of police abuse",
   "repository": "https://github.com/blackfist/padb.git",
-  "keywords": ["police", "statistics"]
+  "keywords": ["police", "statistics"],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:setup"
+  }
 }
