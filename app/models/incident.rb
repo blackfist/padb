@@ -40,6 +40,8 @@
 #  outcome_dollars                 :integer
 #  created_at                      :datetime         not null
 #  updated_at                      :datetime         not null
+#  department_id                   :integer
+#  abuse_retrained                 :boolean
 #
 
 class Incident < ActiveRecord::Base

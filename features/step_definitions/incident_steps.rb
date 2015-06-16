@@ -16,6 +16,10 @@ When(/^I enter the following answers:$/) do |table|
   end
 end
 
+When(/^I check "(.*?)"$/) do |arg1|
+  check(arg1)
+end
+
 When(/^I click "(.*?)"$/) do |button|
   click_button button
 end
@@ -33,4 +37,11 @@ end
 Then(/^I should have (\d+) incident$/) do |count|
   # Incident.count.should == count.to_i
   expect(Incident.count).to eq(count.to_i)
+end
+
+Then(/^the last incident should have the following attributes:$/) do |table|
+  @incident = Incident.last
+  table.rows_hash.each do |row|
+    expect(@incident.send(row[0]).to_s).to eq(row[1])
+  end
 end

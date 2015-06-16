@@ -71,6 +71,7 @@ class IncidentsController < ApplicationController
       params.require(:incident_form).permit(:summary, :year, :month, :city, :state,
       :context, :abuse_force, :abuse_search, :abuse_misconduct,
       :abuse_intimidation, :abuse_sexual, :abuse_escalation, :abuse_animal,
+      :abuse_restrained,
       {force_variety: []}, {search_variety: []}, {misconduct_variety: []},
       {intimidation_variety: []}, {sexual_variety: []}, {escalation_variety: []},
       :victim_count, :victim_notes, {victim_race: []}, {victim_age: []}, {victim_gender: []},

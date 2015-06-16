@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150612054941) do
+ActiveRecord::Schema.define(version: 20150616031730) do
 
   create_table "departments", force: :cascade do |t|
     t.string   "name"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20150612054941) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.integer  "department_id"
+    t.boolean  "abuse_retrained"
+    t.boolean  "abuse_restrained"
   end
 
   create_table "posts", force: :cascade do |t|
