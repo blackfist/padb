@@ -51,6 +51,8 @@ end
 # SQLite 3
 group :development, :test do
   gem 'sqlite3', '1.3.10'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 # Devise: https://github.com/plataformatec/devise
