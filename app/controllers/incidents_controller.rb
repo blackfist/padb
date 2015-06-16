@@ -31,7 +31,7 @@ class IncidentsController < ApplicationController
       if @incident_form.save
         format.html { redirect_to incidents_path, notice: 'Incident was successfully created.' }
       else
-        render :new
+        format.html {render :new}
       end
     end
   end
