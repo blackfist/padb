@@ -1,6 +1,8 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 # README
 
+[![Circle CI](https://circleci.com/gh/blackfist/padb/tree/master.svg?style=svg)](https://circleci.com/gh/blackfist/padb/tree/master)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
