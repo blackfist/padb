@@ -17,3 +17,4 @@
 //= require bootstrap
 //= require common
 //= require autocomplete-rails
+//= require incidents

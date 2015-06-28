@@ -109,6 +109,18 @@
   </div>
   <%= f.input :outcome_dollars, label:"Total dollar amount for awards/settlements" %>
 
+  <h2>Sources</h2>
+  <div ng-app="addUrls">
+    <div ng-controller="urlController">
+      <div class="form-group" ng-repeat="url in urls">
+        <label for="url" ng-show="showUrlLabel(url)" class="control-label">Urls</label>
+        <input type="text" ng-model="url.value" name="incident_form[urls][]" id="incident_form_url" placeholder="Enter a url" class="form-control">
+        <button type="button" ng-show="showAddUrl(url)" ng-click="addNewUrl()">Add another URL</button>
+
+      </div>
+    </div>
+  </div>
+
   <%= f.submit "Submit incident" %>
 
 <% end %>

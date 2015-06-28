@@ -80,6 +80,7 @@ class IncidentsController < ApplicationController
       {outcome_hr_variety: []},
       {outcome_internal_variety: []}, {outcome_dept_statement_variety: []},
       {outcome_union_statement_variety: []}, :outcome_dollars, :department_name,
-      :department_city, :department_state, :department_county, :department_level)
+      :department_city, :department_state, :department_county, :department_level,
+      :department_notes, urls:[])
     end
 end

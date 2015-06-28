@@ -68,4 +68,5 @@ class Incident < ActiveRecord::Base
   serialize :outcome_internal_variety
   serialize :outcome_dept_statement_variety
   serialize :outcome_union_statement_variety
+  serialize :urls
 end

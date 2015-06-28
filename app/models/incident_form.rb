@@ -9,7 +9,7 @@ class IncidentForm
     :department_level, :department_notes, :outcome_dollars, :outcome_hr_variety,
     :outcome_legal_variety, :outcome_physical_variety, :outcome_internal_variety,
     :outcome_dept_statement_variety, :outcome_union_statement_variety,
-    :abuse_animal, :department_county, :abuse_restrained
+    :abuse_animal, :department_county, :abuse_restrained, :urls
 
   validates :summary, :year, :state, :context,
     :department_name, :department_city, :department_state, presence: true
@@ -46,7 +46,7 @@ class IncidentForm
       outcome_internal_variety: outcome_internal_variety,
       outcome_dept_statement_variety: outcome_dept_statement_variety,
       outcome_union_statement_variety: outcome_union_statement_variety,
-      abuse_animal: abuse_animal, abuse_restrained: abuse_restrained)
+      abuse_animal: abuse_animal, abuse_restrained: abuse_restrained, urls: urls)
   end
 
 
