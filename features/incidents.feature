@@ -3,6 +3,12 @@ Feature: Adding Incidents
   As a regular user
   I want to enter data
 
+  Background:
+    Given the following user record:
+      | username | email      | password    |  admin   |
+      | tester | tester@test.com     | tester      | true     |
+    And I log in as "tester" with password "tester"
+
   Scenario: Entering a new incident
     Given that I am at the new incident page
     When I enter the following answers:
