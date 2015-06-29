@@ -3,6 +3,7 @@
   "description": "A rails app to keep track of incidents of police abuse",
   "repository": "https://github.com/blackfist/padb.git",
   "keywords": ["police", "statistics"],
+  "addons": ["bonsai"]
   "scripts": {
     "postdeploy": "bundle exec rake db:setup"
   }
