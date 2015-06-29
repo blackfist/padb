@@ -3,7 +3,7 @@ Given(/^the elasticsearch indexes are clean$/) do
   # Department.__elasticsearch__.client = Elasticsearch::Client.new log: true
   Incident.__elasticsearch__.create_index! index: Incident.index_name
   Department.__elasticsearch__.create_index! index: Department.index_name
-  sleep(1)
+  sleep(2)
 end
 
 When(/^I enter "(.*?)" into the search field$/) do |arg1|
