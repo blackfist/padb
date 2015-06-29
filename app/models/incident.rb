@@ -50,7 +50,7 @@ class Incident < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
   # http://pivotallabs.com/rspec-elasticsearchruby-elasticsearchmodel/
-  index_name [Rails.env, model_name.collection.gsub(/\//, '-')].join('_')
+  # index_name [Rails.env, model_name.collection.gsub(/\//, '-')].join('_')
 
   validates :summary, :year, :state, :context, presence: true
   belongs_to :department

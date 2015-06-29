@@ -2,6 +2,7 @@ Given(/^the following incidents exist:$/) do |table|
   table.hashes.each do |hash|
     Incident.create!(summary: hash['summary'], year: hash['year'], state: hash['state'], context: hash['context'], department_id: Department.last.id)
   end
+  sleep(2)
 end
 
 Given(/^that I am at the new incident page$/) do
