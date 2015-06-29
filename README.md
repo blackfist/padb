@@ -27,3 +27,5 @@ Things you may want to cover:
 
 * ...
 # padb
+
+elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
