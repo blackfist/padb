@@ -1,0 +1,7 @@
+<%= form_tag controller_name, method: :get do %>
+  <div class="form-group">
+    <%= text_field_tag :search_query, params[:search_query], class: "form-control", placeholder: "Enter search terms" %>
+  </div>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
+<hr>

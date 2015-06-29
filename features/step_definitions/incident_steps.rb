@@ -8,6 +8,10 @@ Given(/^that I am at the new incident page$/) do
   visit new_incident_path
 end
 
+Given(/^that I am at the incident index page$/) do
+  visit incidents_path
+end
+
 When(/^I enter the following answers:$/) do |table|
 #  save_and_open_page
   table.rows_hash.each do |row|

@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Incidents</h1>
+
+<%= render '/layouts/search' %>
+
 <p><strong><%= @incidents.count %></strong> <%= "incident".pluralize(@incidents.count) %> and counting.</p>
 
 

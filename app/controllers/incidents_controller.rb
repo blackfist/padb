@@ -6,7 +6,11 @@ class IncidentsController < ApplicationController
   # GET /incidents
   # GET /incidents.json
   def index
-    @incidents = Incident.all
+    if params[:search_query].present?
+      @incidents = Incident.search(params[:search_query]).records
+    else
+      @incidents = Incident.all
+    end
   end
 
   # GET /incidents/1

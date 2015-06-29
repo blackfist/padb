@@ -13,6 +13,11 @@ class DepartmentsController < ApplicationController
   end
 
   def index
-    @departments = Department.all
+    if params[:search_query].present?
+      @departments = Department.search(params[:search_query]).records
+    else
+      @departments = Department.all
+    end
+
   end
 end

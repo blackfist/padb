@@ -32,6 +32,13 @@ gem 'simple_form'
 gem 'show_for'
 gem 'rails4-autocomplete'
 
+# Adding elasticsearch stuff
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+group :production do
+  gem 'bonsai-elasticsearch-rails'
+end
+
 
 group :development, :test do
   gem 'byebug', '4.0.5'
